@@ -1,8 +1,10 @@
 language: node_js
+env:
+  global:
+    - DISPLAY=:99.0
 node_js:
   - "0.10"
 before_install:
-  - "phantomjs -v"
   - "npm install -g casperjs"
 before_script:
   - "node test/server.js &"
