@@ -21,7 +21,7 @@ casper.test.begin("Simple component  declared by attribute waitforselector", 2, 
 	});
 });
 
-casper.test.begin("Simple component  declared by attribute", 2, function (test) {
+/*casper.test.begin("Simple component  declared by attribute", 2, function (test) {
 	casper.start('http://localhost:8945/test/pages/greet-attribute.html', function () {
 		this.wait(200, function () {
 			console.log(this.getPageContent())
@@ -74,6 +74,6 @@ casper.test.begin("Dependency injection of a custom service", 3, function (test)
 		test.assert(this.fetchText('h1') == 'test-service', "A custom service is used to render a string in the template");
 		test.done();
 	});
-});
+});*/
 
 casper.run();
