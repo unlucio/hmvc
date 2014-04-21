@@ -1,4 +1,14 @@
-casper.test.begin("Page without components", 2, function (test) {
+casper.test.begin("Page foobar thing", 1, function (test) {
+	casper.start('http://localhost:8945/test/pages/dumb.html', function () {
+		this.wait(200, function () {
+			console.log(this.getPageContent())
+			test.assertExists("fooBar", "the fooBar is ok");
+			test.done();
+		});
+	});
+});
+
+/*casper.test.begin("Page without components", 2, function (test) {
 	casper.start('http://localhost:8945/test/pages/nothing.html', function () {
 		this.wait(200, function () {
 			console.log(this.getPageContent())
@@ -7,7 +17,7 @@ casper.test.begin("Page without components", 2, function (test) {
 			test.done();
 		});
 	});
-});
+});*/
 
 /*casper.test.begin("Simple component", 2, function (test) {
 	casper.start('http://localhost:8945/test/pages/greet.html', function () {
@@ -21,7 +31,7 @@ casper.test.begin("Page without components", 2, function (test) {
 });*/
 
 
-casper.test.begin("Simple component", 2, function (test) {
+/*casper.test.begin("Simple component", 2, function (test) {
 	casper.start('http://localhost:8945/test/pages/greet.html', function () {
 		this.wait(200, function () {
 			console.log(this.getPageContent())
@@ -30,7 +40,7 @@ casper.test.begin("Simple component", 2, function (test) {
 			test.done();
 		});
 	});
-});
+});*/
 /*
 casper.test.begin("Simple component  declared by attribute", 2, function(test) {
     casper.start('http://localhost:8945/test/pages/greet-attribute.html', function() {

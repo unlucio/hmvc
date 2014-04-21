@@ -3,8 +3,17 @@
 </head>
 <body>
 <script>
-    document.write("<pippo>");
-    console.log("=======================> console.log <=======================");
+
+	var foo = (function () {
+		return {
+			bar: "fooBar",
+			run: function () {
+				document.write("<"+this.bar+">");
+			}
+		}
+	}());
+
+	foo.run();
 </script>
 </body>
 </html>
