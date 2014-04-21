@@ -10,7 +10,7 @@ casper.test.begin("Try Dumb Page for JS execution", 1, function (test) {
 
 casper.test.begin("Page without components", 2, function (test) {
 	casper.start('http://localhost:8945/test/pages/nothing.html', function () {
-		this.wait(200, function () {
+		this.wait(5000, function () {
 			console.log(this.getPageContent())
 			test.assertExists("greet", "the greet component isnt being rendered");
 			test.assertNotExists("h1", "the <h1>...</h1> tag disappears from the dom");
