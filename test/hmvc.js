@@ -9,7 +9,7 @@ casper.test.begin("Page without components", 2, function (test) {
 	});
 });
 
-casper.test.begin("Simple component", 2, function (test) {
+/*casper.test.begin("Simple component", 2, function (test) {
 	casper.start('http://localhost:8945/test/pages/greet.html', function () {
 		this.waitForSelector("h1", function () {
 			console.log(this.getPageContent())
@@ -18,20 +18,20 @@ casper.test.begin("Simple component", 2, function (test) {
 			test.done();
 		});
 	});
-});
+});*/
 
+
+casper.test.begin("Simple component", 2, function (test) {
+	casper.start('http://localhost:8945/test/pages/greet.html', function () {
+		this.wait(200, function () {
+			console.log(this.getPageContent())
+			test.assertExists("h1", "the greet component is being rendered");
+			test.assertNotExists("greet", "the <greet>...</greet> tag disappears from the dom");
+			test.done();
+		});
+	});
+});
 /*
-casper.test.begin("Simple component", 2, function(test) {
-    casper.start('http://localhost:8945/test/pages/greet.html', function() {
-        this.wait(200, function() {
-            console.log(this.getPageContent())
-            test.assertExists("h1", "the greet component is being rendered");
-            test.assertNotExists("greet", "the <greet>...</greet> tag disappears from the dom");
-            test.done();
-        });
-    });
-});
-
 casper.test.begin("Simple component  declared by attribute", 2, function(test) {
     casper.start('http://localhost:8945/test/pages/greet-attribute.html', function() {
         this.wait(200, function() {
