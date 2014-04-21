@@ -9,4 +9,6 @@ hmvc.component('greet', function (element) {
 	};
 });
 
-hmvc.run();
+window.onload = function () {
+	hmvc.run();
+};
