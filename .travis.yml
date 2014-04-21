@@ -6,6 +6,7 @@ node_js:
   - "0.10"
 before_install:
   - "npm install -g casperjs"
+  - "casperjs --version"
 before_script:
   - "node test/server.js &"
   - "sleep 2"
