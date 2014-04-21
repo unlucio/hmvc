@@ -7,19 +7,7 @@
 </greet>
 <script type="text/javascript" src="http://localhost:8945/bower_components/lodash/dist/lodash.js"></script>
 <script type="text/javascript" src="http://localhost:8945/hmvc.js"></script>
-<script>
-    hmvc.component('greet', function(element){
-        return {
-            template: "<h1>{{ greeting }}</h1>",
-            run: function() {
-                return {
-                    greeting: element.text()
-                }
-            }
-        };
-    });
+<script type="text/javascript" src="http://localhost:8945/test/pages/javascript/greet.js"></script>
 
-    hmvc.run();
-</script>
 </body>
 </html>
