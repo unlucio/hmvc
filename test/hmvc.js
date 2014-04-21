@@ -1,30 +1,21 @@
-casper.test.begin("Try Dumb Page for JS execution", 1, function (test) {
-	casper.start('http://localhost:8945/test/pages/dumb.html', function () {
-		this.wait(200, function () {
-			console.log(this.getPageContent())
-			test.assertExists("pippo", "the greet component isnt being rendered");
-			test.done();
-		});
-	});
-});
-
-casper.test.begin("Page without components", 2, function (test) {
-	casper.start('http://localhost:8945/test/pages/nothing.html', function () {
-		this.wait(5000, function () {
-			console.log(this.getPageContent())
-			test.assertExists("greet", "the greet component isnt being rendered");
-			test.assertNotExists("h1", "the <h1>...</h1> tag disappears from the dom");
-			test.done();
-		});
-	});
-});
-
 casper.test.begin("Simple component", 2, function (test) {
 	casper.start('http://localhost:8945/test/pages/greet.html', function () {
 		this.wait(200, function () {
 			console.log(this.getPageContent())
 			test.assertExists("h1", "the greet component is being rendered");
 			test.assertNotExists("greet", "the <greet>...</greet> tag disappears from the dom");
+			test.done();
+		});
+	});
+});
+
+
+casper.test.begin("Simple component  declared by attribute waitforselector", 2, function (test) {
+	casper.start('http://localhost:8945/test/pages/greet-attribute.html', function () {
+		this.waitForSelector("h1", function () {
+			console.log(this.getPageContent())
+			test.assertExists("h1", "the greet component is being rendered");
+			test.assertNotExists("div", "the <div greet>...</div> tag disappears from the dom");
 			test.done();
 		});
 	});
