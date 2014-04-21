@@ -5,13 +5,32 @@
 <script>
 
 	var foo = (function () {
+		var component = null;
+
+		var execute = function () {
+
+		}
+
 		return {
-			bar: "fooBar",
+			registerComponent: function(newComponent) {
+				component = newComponent;
+			},
 			run: function () {
-				document.write("<"+this.bar+">");
+				var componentInstance = component();
+				componentInstance.run(componentInstance.template);
 			}
 		}
 	}());
+
+	foo.registerComponent(function() {
+		return {
+			template: "fooBar",
+			run: function () {
+				document.write("<"+this.template+">");
+			}
+		};
+
+	});
 
 	foo.run();
 </script>
