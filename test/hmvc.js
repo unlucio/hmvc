@@ -1,13 +1,13 @@
-/*casper.test.begin("Page without components", 2, function(test) {
-    casper.start('http://localhost:8945/test/pages/nothing.html', function() {
-        this.wait(200, function() {
-            console.log(this.getPageContent())
-            test.assertExists("greet", "the greet component isnt being rendered");
-            test.assertNotExists("h1", "the <h1>...</h1> tag disappears from the dom");
-            test.done();
-        });
-    });
-});*/
+casper.test.begin("Page without components", 2, function (test) {
+	casper.start('http://localhost:8945/test/pages/nothing.html', function () {
+		this.wait(200, function () {
+			console.log(this.getPageContent())
+			test.assertExists("greet", "the greet component isnt being rendered");
+			test.assertNotExists("h1", "the <h1>...</h1> tag disappears from the dom");
+			test.done();
+		});
+	});
+});
 
 casper.test.begin("Simple component", 2, function (test) {
 	casper.start('http://localhost:8945/test/pages/greet.html', function () {
