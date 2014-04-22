@@ -8,7 +8,7 @@
 		var component = null;
 
 		var execute = function () {
-
+			return component();
 		}
 
 		return {
@@ -16,7 +16,7 @@
 				component = newComponent;
 			},
 			run: function () {
-				var componentInstance = component();
+				var componentInstance = execute();
 				componentInstance.run(componentInstance.template);
 			}
 		}
