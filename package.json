@@ -7,7 +7,7 @@
 		"test": "test"
 	},
 	"scripts": {
-		"test": "casperjs test test/hmvc.js  --fail-fast --verbose --log-level=debug"
+		"test": "casperjs test test/hmvc.js  --fail-fast --verbose --log-level=debug --engine=phantomjs"
 	},
 	"repository": {
 		"type": "git",
